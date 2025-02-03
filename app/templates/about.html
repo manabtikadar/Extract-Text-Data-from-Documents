@@ -1,0 +1,230 @@
+{% extends 'index.html' %} {% block body %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  h3 {
+    color: #2c3e50;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  p,
+  ul,
+  ol {
+    line-height: 1.6;
+  }
+
+  .content-wrapper {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  ul,
+  ol {
+    margin-left: 20px;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  ul {
+    list-style-type: square;
+  }
+
+  strong {
+    color: #2c3e50;
+  }
+
+  .stage-title {
+    font-size: 1.2em;
+    color: #2980b9;
+    margin-top: 20px;
+  }
+
+  .stage-list {
+    margin-left: 30px;
+  }
+
+  .highlight {
+    color: #e74c3c;
+  }
+
+  .section-header {
+    background-color: #2980b9;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    h3 {
+      font-size: 1.5em;
+    }
+
+    .content-wrapper {
+      margin: 10px;
+      padding: 15px;
+    }
+
+    .stage-title {
+      font-size: 1.1em;
+    }
+
+    .stage-list {
+      margin-left: 20px;
+    }
+
+    .section-header {
+      padding: 8px;
+      font-size: 1.1em;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h3 {
+      font-size: 1.2em;
+    }
+
+    .content-wrapper {
+      margin: 5px;
+      padding: 10px;
+    }
+
+    .stage-title {
+      font-size: 1em;
+    }
+
+    .stage-list {
+      margin-left: 10px;
+    }
+
+    .section-header {
+      padding: 6px;
+      font-size: 1em;
+    }
+  }
+</style>
+
+<div class="content-wrapper">
+  <h3>
+    Welcome to My Project: "Intelligently Extract Text & Data from Documents
+    with OCR NER"!
+  </h3>
+
+  <p>
+    In this project, I have developed a customized Named Entity Recognizer
+    (NER). The primary goal is to extract entities from scanned documents such
+    as invoices, business cards, shipping bills, and bills of lading. For data
+    privacy reasons, the demonstration focuses on business cards. However, the
+    framework can be extended to process various financial documents.
+  </p>
+
+  <p>
+    Below is the development plan and approach followed in the project. The
+    project integrates two core technologies from data science:
+  </p>
+
+  <ol>
+    <li>Computer Vision</li>
+    <li>Natural Language Processing (NLP)</li>
+  </ol>
+
+  <p>
+    In the Computer Vision module, the system scans the document, identifies
+    text locations, and extracts text from images. The NLP module then extracts
+    entities, cleans the text, and parses the extracted information.
+  </p>
+
+  <p class="section-header">
+    Python Libraries Used in the Computer Vision Module:
+  </p>
+  <ul>
+    <li>OpenCV</li>
+    <li>NumPy</li>
+    <li>Pytesseract</li>
+  </ul>
+
+  <p class="section-header">Python Libraries Used in the NLP Module:</p>
+  <ul>
+    <li>SpaCy</li>
+    <li>Pandas</li>
+    <li>Regular Expressions</li>
+    <li>String Manipulations</li>
+  </ul>
+
+  <p>
+    To ensure clarity and structure, the project was divided into several
+    stages:
+  </p>
+
+  <div class="stage-title">Stage 1: Setting Up the Project</div>
+  <ul class="stage-list">
+    <li>Installing Python</li>
+    <li>Installing Dependencies</li>
+  </ul>
+
+  <div class="stage-title">Stage 2: Data Preparation and Text Extraction</div>
+  <ul class="stage-list">
+    <li>Gathering Images</li>
+    <li>Overview of Pytesseract</li>
+    <li>Extracting Text from Images</li>
+    <li>Cleaning and Preparing Text</li>
+  </ul>
+
+  <div class="stage-title">
+    Stage 3: Data Labeling for NER Using BIO Tagging
+  </div>
+  <ul class="stage-list">
+    <li>
+      Manual Labeling with the BIO Technique:
+      <ul>
+        <li>B - Beginning</li>
+        <li>I - Inside</li>
+        <li>O - Outside</li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="stage-title">
+    Stage 4: Data Preprocessing for Machine Learning
+  </div>
+  <ul class="stage-list">
+    <li>Preparing Training Data for SpaCy</li>
+    <li>Converting Data into SpaCy Format</li>
+  </ul>
+
+  <div class="stage-title">Stage 5: Training the Named Entity Model</div>
+  <ul class="stage-list">
+    <li>Configuring the NER Model</li>
+    <li>Training the Model</li>
+  </ul>
+
+  <div class="stage-title">
+    Stage 6: Prediction, Entity Extraction, and Text Parsing
+  </div>
+  <ul class="stage-list">
+    <li>Loading the Model</li>
+    <li>Rendering and Serving with Displacy</li>
+    <li>Drawing Bounding Boxes on Images</li>
+    <li>Parsing Entities from Text</li>
+  </ul>
+
+  <h4>
+    Finally, I integrated all components to create a comprehensive document
+    scanner application.
+  </h4>
+</div>
+
+{% endblock %}

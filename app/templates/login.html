@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block title %} Log In {% endblock %} {% block
+content %}
+<div
+  class="container mt-5 d-flex justify-content-center align-items-center"
+  style="min-height: 80vh"
+>
+  <div class="col-md-6">
+    <h1 class="text-center mb-4">Log In</h1>
+    <form
+      action="{{ url_for('login_page') }}"
+      method="POST"
+      class="p-4"
+      style="
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 10px aqua;
+        border-radius: 10px;
+        border: 1px solid aqua;
+        background-color: rgba(0, 0, 0, 0.7);
+      "
+    >
+      <div class="form-group">
+        {{ form.hidden_tag() }} {{ form.username.label(class="font-weight-bold
+        text-light") }} {{ form.username(class="form-control",
+        placeholder="Enter Username") }}
+      </div>
+      <div class="form-group">
+        {{ form.password.label(class="font-weight-bold text-light") }} {{
+        form.password(class="form-control", placeholder="Enter Password") }}
+      </div>
+
+      <br />
+      <div class="checkbox mb-3 text-center">
+        <h6 class="text-light">Don't have an account?</h6>
+        <a
+          class="btn btn-secondary btn-sm"
+          href="{{ url_for('register_page') }}"
+        >
+          Register
+        </a>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Log In</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %} {% block title %} Register {% endblock %} {% block
+content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form
+        method="POST"
+        class="form-register mt-5 p-4 border rounded shadow"
+        style="
+          backdrop-filter: blur(10px);
+          box-shadow: 0 4px 10px aqua;
+          border-radius: 10px;
+        "
+      >
+        {{form.hidden_tag()}}
+        <h1 class="h3 mb-3 font-weight-normal text-center text-white">
+          Please Create Your Account
+        </h1>
+
+        <div class="form-group">
+          {{ form.username.label(class="font-weight-bold text-light") }} {{
+          form.username(class="form-control", placeholder="Enter your username")
+          }}
+        </div>
+
+        <div class="form-group">
+          {{form.email_address.label(class="font-weight-bold text-light")}} {{
+          form.email_address(class="form-control", placeholder="Enter your
+          email") }}
+        </div>
+
+        <div class="form-group">
+          {{ form.password1.label(class="font-weight-bold text-light") }} {{
+          form.password1(class="form-control", placeholder="Enter your
+          password") }}
+        </div>
+
+        <div class="form-group">
+          {{ form.password2.label(class="font-weight-bold text-light") }} {{
+          form.password2(class="form-control", placeholder="Confirm your
+          password") }}
+        </div>
+
+        <!-- Add submit button -->
+        <div class="form-group">
+          {{ form.submit(class="btn btn-lg btn-primary btn-block") }}
+        </div>
+
+        <p class="mt-3 text-center text-light">
+          Already have an account?
+          <a href="/login" class="text-primary">Login here</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
